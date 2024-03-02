@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 import CartIcon from "./CartIcon";
 import { useEffect, useState } from "react";
+import React from "react";
 
 
 const OpenedProd = () => {
@@ -17,8 +18,11 @@ const OpenedProd = () => {
         window.scrollTo(0, 0);
     }, [location.pathname])
 
-    const toggleshower = () => { 
+    const toggleshower = (head:string) => { 
         shower == 1 ? setShower(0) : setShower(1);
+        
+        chooseProd(head);
+        
     }
 
   return (
@@ -75,9 +79,9 @@ const OpenedProd = () => {
                     {
                         products.map((prod) => (
                             <div key={prod.head}  className={`${(prod.type == item?.type) && prod.head != item?.head ? "block" : "hidden"} shadow-xl w-[150px] h-[150px] items-center cursor-pointer trans hover:opacity-85 `}>
-                                <Link to="/Product" onClick={toggleshower} >
-                                    <img onClick={() => chooseProd(prod.head)} src={prod.img} className="w-[150px] h-[150px]" alt="" />
-                                </Link>
+                                <div   >
+                                    <img onClick={ () => toggleshower(prod.head)} src={prod.img} className="w-[150px] h-[150px]" alt="" />
+                                </div>
                             </div>
                         ))
                     }

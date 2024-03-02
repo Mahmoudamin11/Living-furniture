@@ -13,14 +13,14 @@ const MobList = () => {
 
   const goToTest = () => { 
     toggleList();
-    if (window.location.pathname != "/" ) { 
+    // if (window.location.pathname != "/" ) { 
         setTimeout(() => { 
             document.getElementById("test")?.scrollIntoView();
         }, 750)
-    }
-    else { 
-        document.getElementById("test")?.scrollIntoView();
-    }
+    // }
+    // else { 
+    //     document.getElementById("test")?.scrollIntoView();
+    // }
     
 }
   useEffect(() => { 
@@ -52,17 +52,18 @@ const MobList = () => {
                         Home
                     </span>
               </Link>
-              <Link to="/" onClick={goToTest} className="w-fit">
-                <li className="trans hover:pl-3  hover:text-main-black cursor-pointer">About</li>
-              </Link>
-              <Link to="AllProducts" onClick={closeList} className="w-fit">
+              
+              <Link to="/AllProducts" onClick={closeList} className="w-fit">
       
                       <span className={`${getOpenPage() == "product" ? "text-black" : " text-dark-gray"} trans hover:text-black hover:pl-3  `}>
                           Products
                       </span>
               </Link>
-              <Link to="InCart" onClick={closeList} className="w-fit" >
+              <Link to="/InCart" onClick={closeList} className="w-fit" >
                 <li className={`trans hover:pl-3  hover:text-main-black ${getOpenPage() == "cart" ? "text-black" : "text-dark-gray"} cursor-pointer`}>Cart</li>
+              </Link>
+              <Link to="/" onClick={goToTest} className="w-fit">
+                <li className="trans hover:pl-3  hover:text-main-black cursor-pointer">About</li>
               </Link>
           </ul>
 

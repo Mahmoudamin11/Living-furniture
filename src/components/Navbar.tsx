@@ -52,14 +52,14 @@ const Navbar = () => {
     
     
     const goToTest = () => { 
-        if (window.location.pathname != "/" ) { 
+        // if (window.location.pathname != "/" ) { 
             setTimeout(() => { 
                 document.getElementById("test")?.scrollIntoView();
             }, 750)
-        }
-        else { 
-            document.getElementById("test")?.scrollIntoView();
-        }
+        // }
+        // else { 
+            // document.getElementById("test")?.scrollIntoView();
+        // }
         
     }
 
@@ -101,7 +101,7 @@ const Navbar = () => {
                         </Link>
                         </li>
 
-                        <Link to="AllProducts" >
+                        <Link to="/AllProducts" >
                             <li className={`flex gap-2  trans  items-center justify-center cursor-pointer`}>
                                 <span className={`${getOpenPage() == "product" ? "text-black" : " text-dark-gray"} hover:text-black trans`}>
                                     Products
@@ -110,7 +110,7 @@ const Navbar = () => {
                             </li>
                         </Link>
 
-                        <Link to="InCart">
+                        <Link to="/InCart">
                             <li className={`flex text-dark-gray  trans items-center justify-center cursor-pointer`}>
                                 <span className={`${getOpenPage() == "cart" ? "text-black" : "text-dark-gray"} hover:text-black trans`}>
                                     Cart
@@ -149,7 +149,7 @@ const Navbar = () => {
                 <FontAwesomeIcon onClick={() => themeChange()} icon={faPaintRoller} size="lg" className={theme == 1 ?" cursor-pointer text-main-color scale-[150%] rotate-180  trans hover:opacity-50" : " cursor-pointer text-main-color trans  hover:opacity-50" } />
                 <FontAwesomeIcon onClick={() => toggleSearch()} icon={faMagnifyingGlass} size="lg" className=" lg:hidden cursor-pointer trans hover:opacity-75" />
                 <div className=" relative h-fit w-fit cursor-pointer trans hover:opacity-75">
-                    <Link to="InCart" >
+                    <Link to="/InCart" >
                         <FontAwesomeIcon icon={faCartShopping} size="lg" className={` ${getOpenPage() == "cart" ? "text-main-color" : "text-dark-gray"} `} />
                     </Link>
                     {totalQuantity > 0 && <span className={` absolute top-0 -translate-y-1/2 -right-3    text-white flex items-center justify-center text-xs w-6 h-6 rounded-full ${getOpenPage() == "cart" ? "bg-dark-gray" : "bg-main-color"} font-bold`}>{totalQuantity}</span>}
@@ -165,7 +165,7 @@ const Navbar = () => {
                     <FontAwesomeIcon onClick={() => toggleSearch()} icon={faMagnifyingGlass} size="lg" className=" lg:hidden cursor-pointer trans hover:opacity-75" />
                 </Link>
                 <div className=" relative h-fit w-fit cursor-pointer trans hover:opacity-75">
-                    <Link to="InCart" >
+                    <Link to="/InCart" >
                         <FontAwesomeIcon icon={faCartShopping} size="lg" className={` ${getOpenPage() == "cart" ? "text-main-color" : "text-dark-gray"} `} />
                     </Link>
                     {totalQuantity > 0 && <span className={` absolute top-0 -translate-y-1/2 -right-3    text-white flex items-center justify-center text-xs w-6 h-6 rounded-full ${getOpenPage() == "cart" ? "bg-dark-gray" : "bg-main-color"} font-bold`}>{totalQuantity}</span>}
