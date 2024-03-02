@@ -1,8 +1,8 @@
 {
   "name": "livin",
   "private": true,
-  "homepage": "https://Mahmoudamin11.github.io/Living-furniture",
   "version": "0.0.0",
+  "homepage": "https://Mahmoudamin11.github.io/Living-furniture",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
@@ -21,7 +21,7 @@
     "framer-motion": "^11.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.22.1"
+    "react-router-dom": "^6.22.2"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
